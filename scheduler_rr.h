@@ -58,6 +58,5 @@ public:
     void simulate() override;
 };
 
-
 #endif //ASSIGN3_SCHEDULER_RR_H
 
