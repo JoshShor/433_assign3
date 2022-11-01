@@ -1,7 +1,7 @@
 /**
 * Assignment 3: CPU Scheduler
  * @file scheduler_rr.h
- * @author ??? (TODO: your name)
+ * @author ??? (TODO: Tam Nguyen, Josh Shor)
  * @brief This Scheduler class implements the RoundRobin (RR) scheduling algorithm.
  * @version 0.1
  */
@@ -16,12 +16,22 @@
 class SchedulerRR : public Scheduler {
 private:
     // TODO: add necessary member variables here for your implementation
-
+    double averageWT;           //average wait time
+    double averageTAT;          //average turn around time
+    int waitT;                  //wait time
+    int size;                   //size
+    int turnaroundT;            //turnaround time
+    int count;                  //count increment
+    int loop;                   //loops
+    unsigned int TimeQ;               //time quantum 
+        
+    vector<PCB> RoundRobinVector;
+    
 public:
     /**
      * @brief Construct a new SchedulerRR object
      */
-    SchedulerRR(int time_quantum = 10);
+    SchedulerRR(int time_quantum = 10);     //amount of time allowed
 
     /**
      * @brief Destroy the SchedulerRR object
@@ -50,3 +60,4 @@ public:
 
 
 #endif //ASSIGN3_SCHEDULER_RR_H
+
