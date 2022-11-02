@@ -1,7 +1,7 @@
 /**
  * Assignment 1: priority queue of processes
  * @file pcb.h
- * @author ??? (TODO: your name)
+ * @author ??? (TODO: Tam Nguyen and Josh Shor)
  * @brief This is the header file for the PCB class, a process control block.
  * @version 0.1
  */
@@ -62,4 +62,12 @@ public:
         cout << "Process " << id << ": " << name << " has priority " << priority << " and burst time "
              << burst_time << endl;
     }
+
+    struct CompareBurst {
+        bool operator()(PCB const &p1, PCB const &p2) {
+            if(p1.burst_time == p2.burst_time)
+                return p1.name > p2.name;
+        return p1.burst_time > p2.burst_time;
+    }
+};
 };
