@@ -21,6 +21,8 @@ SchedulerRR::SchedulerRR(int time_quantum)
     turnaroundT = 0;
     count = 0;
     loop = 0; 
+    waitT = 0;
+    size = 0;
 }
 
 SchedulerRR::~SchedulerRR()

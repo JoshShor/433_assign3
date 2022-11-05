@@ -23,7 +23,7 @@ using namespace std;
  SchedulerFCFS::SchedulerFCFS()  {
      aveWaitTime = 0.0, 
      aveTurnTime = 0.0;
-     waitTIme =0;
+     waitTIme = 0;
      turnTime = 0;
   
  }
@@ -62,8 +62,8 @@ void SchedulerFCFS::simulate() {
         //printf("simulate33443423433 %ld \n", list.size());
 
     for (unsigned i = 0; i < list.size(); i++) {//iterates through the size of the list
-        waitTIme = turnTime - list[i].burst_time;
         turnTime += list[i].burst_time;
+        waitTIme = turnTime - list[i].burst_time;
         aveTurnTime += turnTime;
         aveWaitTime += waitTIme;
       
